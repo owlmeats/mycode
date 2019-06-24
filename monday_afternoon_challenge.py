@@ -22,10 +22,14 @@ d = "JP"
 e = 1
 
 
-#print statement 1
+#print statement using .format syntax directly, and assigning to variable: 
+print("{} {}!".format(a,b))
+
 z = "{} {}!".format(a,b)
 print(z)
 
+#print statement using "f-string" syntax directly, and assigning to a variable:
+print(f"{a} {b}!")
 y = f"{a} {b}!"
 print(y)
 
