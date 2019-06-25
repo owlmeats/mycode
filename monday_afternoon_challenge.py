@@ -34,8 +34,15 @@ y = f"{a} {b}!"
 print(y)
 
 
-x = "Hi Sam, my name is {}.  We are in Texas.  This is day {}".format(d,e)
+
+x = "Hi {}, my name is {}.  We are in {}.  This is day {}".format(c,d,b,e)
 print(x)
+
+
+
+
+
+
 
 w = f"Hi Sam, my name is {d}.  We are in Texas.  This is day {e}"
 print(w)
