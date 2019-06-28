@@ -1,0 +1,15 @@
+---
+- name: Another network playbook example
+  hosts: aristaswitchessecure
+  gather_facts: no
+
+
+  # insted we will store our encrypted information within a YAML file, vault.yml
+  vars_files:
+    - vault.yml
+
+
+  tasks:
+  - name: Harvest Arista facts
+    eos_facts:
+    when: ansible_network_os == 'eos'
