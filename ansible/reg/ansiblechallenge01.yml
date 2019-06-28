@@ -1,0 +1,29 @@
+---
+# Create an ansible playbook to perform the following tasks... 
+# 1. Accept user input for a directory
+# 2. Perform an 'ls' command within the hosts
+# 3. Save the results of the 'ls' command
+# 4. Print out the results from the 'ls' command
+
+- name: Prompt for user input for a directory
+  hosts: planet-express
+  gather_facts: yes
+
+
+  vars_prompt:
+    - name: "directoryz" # variable name for the directory provided by user
+      prompt: "What is the name of the directory you want to list?" 
+      private: no
+
+  tasks: 
+    - name: Print out the directly entered
+      debug: 
+        msg: "{{ directoryz }}"
+
+    - name: "Issue the ls command"
+      command: ls "{{ directoryz }}"
+      register: directory_list
+
+    - name: "debug - display data"
+      debug:
+        msg:  Here's your crap - "{{ directory_list.stdout_lines }}" 
